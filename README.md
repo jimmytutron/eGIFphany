@@ -10,7 +10,7 @@ A modern web browser is recommeded for using this app. Thanks to Bootstrap, this
 
 
 ## Deployment
-Launch the webpage here! [e•gif•phany](https://jimmytutron.github.io/WhosThatPokemon/) 
+Launch the webpage here! [e•gif•phany](https://jimmytutron.github.io/eGIFphany/) 
 
 ## Built With :red_circle:
 
