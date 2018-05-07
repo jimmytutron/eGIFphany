@@ -8,7 +8,7 @@ var gallery = $("#gallery");
 
 //creates the buttons in aesthetics array
 function createInputs() {
-	gallery.empty();
+	$("#gallery-buttons").empty();
 
 	for (var i= 0; i < aesthetics.length; i++) {
 		var newButton = $("<button>");
@@ -51,8 +51,16 @@ function displayGallery(){
 			p.text("Rated " + currentGif.rating);
 
 			var galleryGif = $("<img>");
-			galleryGif.attr("class", "img-fluid")
-			galleryGif.attr("src", currentGif.images.original.url);
+
+			var stillGif = currentGif.images.original_still.url;
+			var animatedGif = currentGif.images.original.url;
+
+
+			galleryGif.attr("class", "img-fluid gif")
+			galleryGif.attr("src", stillGif);
+			galleryGif.attr("data-state", "still");
+			galleryGif.attr("data-still", stillGif);
+			galleryGif.attr("data-animate", animatedGif);
 
 			gifDiv.append (p, galleryGif);
 			gallery.append(gifDiv);
@@ -60,8 +68,27 @@ function displayGallery(){
 	});
 };
 
+
 $(document).on("click", ".subject", displayGallery);
 createInputs();
+
+//animate on click
+$(document).on("click", ".gif", function(){
+
+  var gif = $(this);
+
+  var state = gif.attr("data-state");
+  var animated = gif.attr("data-animate");
+  var still = gif.attr("data-still");
+
+  if (state === "still"){
+    gif.attr("data-state","animate");
+    gif.attr("src", animated);
+  } else if (state === "animate"){
+    gif.attr("data-state","still");
+    gif.attr("src",still);
+  }
+});
 
 
 
