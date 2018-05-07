@@ -3,7 +3,7 @@
 //topics
 
 var aesthetics = ["scenery","cinemagraph","nature","timelapse","architecture"];
-var gallery = $("#gallery")
+var gallery = $("#gallery");
 
 function createInputs() {
 	gallery.empty();
@@ -28,15 +28,16 @@ $("#addToGallery").on("click", function(event){
 
 createInputs();
 
-
-function displayGallery(){
+$(".subject").on("click", function (){
 	var gallerySubject  = $(this).attr("data-name");
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gallerySubject + "&api_key=E5tZleXqhxHbqi6ns8x5xTX15OVhBNZv";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gallerySubject + "&api_key=E5tZleXqhxHbqi6ns8x5xTX15OVhBNZv&limit=10";
 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
 	}).then(function(response){
-		
-	})
-}
+		console.log(queryURL);
+		console.log(response);
+	});
+
+	});
