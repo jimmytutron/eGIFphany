@@ -1,6 +1,6 @@
 body {
 	color: #fff;
-	background: url("https://source.unsplash.com/1920x1080/?nature") no-repeat center center fixed;
+	background: url("https://source.unsplash.com/1920x1080/?dark") no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; 
@@ -15,6 +15,15 @@ body {
 
 h1 {
 	font-size: 4em;
+	font-family: 'Prata', serif;
+}
+
+#addToGallery {
+	background: none;
+	color: #fff;
+	border: none;
+	font-family: 'Prata', serif;
+	cursor: pointer;
 }
 
 #gallery {
@@ -29,11 +38,22 @@ h1 {
    column-gap:           0px;
 }
 
+/*.opacity {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+}*/
+
 #gallery img {
   /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
   padding: 5px;
+  filter: grayscale(100%) blur(0.6px);
+
+}
+
+#gallery img:hover {
+	filter: none;
 }
 
 @media (max-width: 1200px) {
@@ -69,4 +89,7 @@ h1 {
 ul#list li {
 	display: inline-block;
 	padding: 5px;
+	cursor: pointer;
+	font-family: 'Contrail One', cursive;
+	font-size: 1.2em;
 }

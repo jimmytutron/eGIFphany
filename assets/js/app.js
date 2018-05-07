@@ -27,6 +27,8 @@ $("#addToGallery").on("click", function(event){
 	var subject = $("#subject-input").val().trim();
 	aesthetics.push(subject);
 	createInputs();
+	$("#subject-input").val("");
+
 });
 
 function displayGallery(){
