@@ -72,23 +72,25 @@ function displayGallery(){
 $(document).on("click", ".subject", displayGallery);
 createInputs();
 
-//animate on click
-$(document).on("click", ".gif", function(){
+//animate on hover
+$(document).on({
+	mouseenter:function() {
 
   var gif = $(this);
-
-  var state = gif.attr("data-state");
   var animated = gif.attr("data-animate");
+
+  gif.attr("data-state","animate");
+  gif.attr("src", animated);
+	},
+	mouseleave:function(){
+
+  var gif = $(this);
   var still = gif.attr("data-still");
 
-  if (state === "still"){
-    gif.attr("data-state","animate");
-    gif.attr("src", animated);
-  } else if (state === "animate"){
-    gif.attr("data-state","still");
+  	gif.attr("data-state","still");
     gif.attr("src",still);
-  }
-});
+	}
+}, ".gif");
 
 
 
