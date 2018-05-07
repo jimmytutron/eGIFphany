@@ -2,21 +2,21 @@
 
 //topics
 
-var aesthetics = ["scenery","cinemagraph","nature","timelapse","architecture"];
+var aesthetics = ["anime scenery","cinemagraph","nature","timelapse","landscape"];
 var gallery = $("#gallery");
 
 
 //creates the buttons in aesthetics array
 function createInputs() {
-	$("#gallery-buttons").empty();
+	$("#list").empty();
 
 	for (var i= 0; i < aesthetics.length; i++) {
-		var newButton = $("<button>");
-		newButton.addClass("subject");
-		newButton.attr("data-name",aesthetics[i]);
-		newButton.text(aesthetics[i]);
+		var newLink = $("<li>");
+		newLink.addClass("subject");
+		newLink.attr("data-name",aesthetics[i]);
+		newLink.text(aesthetics[i]);
 
-		$("#gallery-buttons").append(newButton);
+		$("#list").append(newLink);
 	}
 };
 
@@ -30,9 +30,10 @@ $("#addToGallery").on("click", function(event){
 });
 
 function displayGallery(){
+	gallery.empty();
 
 	var gallerySubject  = $(this).attr("data-name");
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gallerySubject + "&api_key=E5tZleXqhxHbqi6ns8x5xTX15OVhBNZv&limit=9";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gallerySubject + "&api_key=E5tZleXqhxHbqi6ns8x5xTX15OVhBNZv&limit=14";
 
 	$.ajax({
 		url: queryURL,
@@ -45,10 +46,10 @@ function displayGallery(){
 		for (var i = 0; i < results.length; i++){
 			currentGif = results[i];
 
-			var gifDiv = $("<div class='col-4'>");
-			var p = $("<p>");
+			var gifDiv = $("<div class ='gif-container'>");
 
-			p.text("Rated " + currentGif.rating);
+
+			var rating = "Rated " + currentGif.rating;
 
 			var galleryGif = $("<img>");
 
@@ -56,14 +57,19 @@ function displayGallery(){
 			var animatedGif = currentGif.images.original.url;
 
 
-			galleryGif.attr("class", "img-fluid gif")
+			galleryGif.attr("class", "img-fluid gif ")
 			galleryGif.attr("src", stillGif);
 			galleryGif.attr("data-state", "still");
 			galleryGif.attr("data-still", stillGif);
 			galleryGif.attr("data-animate", animatedGif);
 
-			gifDiv.append (p, galleryGif);
-			gallery.append(gifDiv);
+			galleryGif.attr("data-toggle", "tooltip");
+			galleryGif.attr("data-placement", "top");
+			galleryGif.attr("title", rating);
+
+			// gifDiv.append(galleryGif);
+			// gifCol.append(gifDiv)
+			gallery.append(galleryGif);
 		}
 	});
 };
@@ -91,6 +97,12 @@ $(document).on({
     gif.attr("src",still);
 	}
 }, ".gif");
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
 
 
 

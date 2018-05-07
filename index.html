@@ -13,27 +13,33 @@
   </head>
   <body>
     <div class = "container">
-      <div class = "row">
-        <div class = "col">
+      <div class = "title row justify-content-center">
+        <div class = "col-12 col-md-6">
           <h1>e • gif • phany</h1>
         </div>
       </div>
 
 
-      <div class = "row">
-        <div class = "col">
+      <div class = "row justify-content-center">
+        <div class = "col-12 col-md-6">
           <form id ="galleryForm">
             <input type="text" id="subject-input">
             <!-- Button triggers new subject to be added -->
-            <input id="addToGallery" type="submit" value="Search Something...">
+            <input id="addToGallery" class="btn btn-outline-light" type="submit" value="Carpe Diem">
           </form>
         </div>
       </div>
 
-      <div class ="row" id = "gallery-buttons">
+      <div class ="row justify-content-center">
+        <ul id ="list">
+        </ul>
       </div>
 
-      <div class ="row" id = "gallery">
+      <div class ="row justify-content-center">
+        <div class ='col-sm-12 col-md-12 col-lg-12'>
+          <div id ="gallery">
+          </div>
+        </div>
       </div>
 
 
@@ -41,6 +47,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
     <script src="assets/js/app.js"></script>
   </body>
 </html>
