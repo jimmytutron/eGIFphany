@@ -59,7 +59,7 @@ function displayGallery(){
 			var animatedGif = currentGif.images.original.url;
 
 
-			galleryGif.attr("class", "img-fluid gif ")
+			galleryGif.attr("class", "img-fluid gif animated flipInY");
 			galleryGif.attr("src", stillGif);
 			galleryGif.attr("data-state", "still");
 			galleryGif.attr("data-still", stillGif);

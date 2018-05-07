@@ -17,6 +17,8 @@ Launch the webpage here! [e•gif•phany](https://jimmytutron.github.io/WhosTha
 * [Javascript](https://www.javascript.com/) - programming language
 * [jQuery](https://jquery.com/) - a javascript library
 * [Bootstrap](https://getbootstrap.com/) - The web framework used
+* [GIPHY API](https://developers.giphy.com/) - Database of gifs
+* [Unsplash](https://source.unsplash.com/) - Generate random background images through Unsplash API
 
 ## Authors :white_circle: 
 
@@ -28,7 +30,6 @@ Launch the webpage here! [e•gif•phany](https://jimmytutron.github.io/WhosTha
 Thanks to the following people for their open source css libraries and resources. Helped add a ~~little~~ ton of *_pizzaz_* to my game.
 
 * [Animate.css](https://daneden.github.io/animate.css/) - [Daniel Eden](https://daneden.me/)
-* [Hover.css](http://ianlunn.github.io/Hover/) - [Ian Lunn](https://github.com/IanLunn)
-* [Codrops](https://tympanus.net/codrops/2013/06/13/creative-button-styles/) - Creative Button Styles
+* [Codrops](https://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/) - Creative Text Inputs
 
 
