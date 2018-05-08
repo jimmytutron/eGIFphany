@@ -26,6 +26,11 @@ h1 {
 	cursor: pointer;
 }
 
+#addToGallery:focus, #clearGallery:focus, #refresh:focus {
+	outline: 0;
+}
+
+
 #gallery {
    /* Prevent vertical gaps */
    line-height: 0;
@@ -111,9 +116,15 @@ ul#list li:hover {
 	color: #fff;
 	width: 200px;
 	text-align: center;
+	letter-spacing: 2px;	
+}
+
+#subject-input:focus {
+	outline: 0;
 }
 
 #subject-input::placeholder {
 	color: #fff;
 	opacity: 0.8;
+	letter-spacing: 3px;
 }
