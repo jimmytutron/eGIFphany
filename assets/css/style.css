@@ -18,7 +18,7 @@ h1 {
 	font-family: 'Prata', serif;
 }
 
-#addToGallery {
+#addToGallery, #clearGallery, #refresh {
 	background: none;
 	color: #fff;
 	border: none;
@@ -96,4 +96,19 @@ ul#list li {
 	cursor: pointer;
 	font-family: 'Contrail One', cursive;
 	font-size: 1.2em;
+	opacity: 0.74;
+}
+
+ul#list li:hover {
+	opacity: 1;
+}
+
+#subject-input {
+	background-color: #2e2e2e;
+	border: none;
+	background-blend-mode: screen;
+	opacity: 0.7;
+	color: #fff;
+	width: 200px;
+	text-align: center;
 }

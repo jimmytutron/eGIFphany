@@ -31,6 +31,11 @@ $("#addToGallery").on("click", function(event){
 
 });
 
+$("#clearGallery").on("click", function(event){
+	event.preventDefault();
+	gallery.empty();
+})
+
 function displayGallery(){
 	gallery.empty();
 
